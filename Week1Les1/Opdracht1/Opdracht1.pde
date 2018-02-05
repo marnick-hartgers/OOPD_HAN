@@ -12,7 +12,7 @@ void setup(){
   println("Delen: 5 & 0");
   println(floatDelen(5,0));
   
-  println("=====Zoeken in array=====");
+  println("\n\n=====Zoeken in array=====");
   int[] zWaardes = new int[]{0,1,2,3,5,7,9};
   println("Waardes met deze opdracht:");
   printArray(zWaardes);
