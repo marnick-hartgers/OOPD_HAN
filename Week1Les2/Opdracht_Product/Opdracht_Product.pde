@@ -9,6 +9,8 @@ class Product {
   String naam;
   double prijs;
 
+
+
   Product(String productNaam, double productPrijs) {
     this.naam =  productNaam;
     this.prijs = productPrijs;
