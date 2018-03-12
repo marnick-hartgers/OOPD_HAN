@@ -22,7 +22,8 @@ public abstract class Switch extends Knop {
 	}
 	
 	@Override
-	public void tekenKnop() {
+	public void teken() {
+
 		tekenBasis();
 		tekenSchuif();
 	}

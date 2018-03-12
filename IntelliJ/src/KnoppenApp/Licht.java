@@ -5,7 +5,7 @@ import processing.core.PApplet;
 import java.util.ArrayList;
 import java.util.EventListener;
 
-public class Licht {
+public class Licht implements IDoelWit {
 	private PApplet app;
 	private int kleur;
 	private ArrayList<StateChangeEventHandler> listners = new ArrayList<StateChangeEventHandler>();
@@ -38,6 +38,16 @@ public class Licht {
 
 	public boolean isAan(){
 		return kleur != 0;
+	}
+
+	@Override
+	public void schakel() {
+		schakelLicht();
+	}
+
+	@Override
+	public void teken() {
+		tekenLicht();
 	}
 
 	static class StateChangeEventHandler implements EventListener{

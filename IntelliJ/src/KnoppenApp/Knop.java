@@ -17,7 +17,7 @@ public abstract class Knop {
 		this.hoogte = hoogte;
 	}
 
-	public void tekenKnop() {
+	public void teken() {
 		app.stroke(95);
 		app.fill(80);
 		app.rect(x, y, breedte, hoogte);

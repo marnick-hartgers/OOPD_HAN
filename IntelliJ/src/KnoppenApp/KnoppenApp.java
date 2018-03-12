@@ -27,9 +27,8 @@ public class KnoppenApp extends PApplet {
 	}
 	
 	public void draw() {
-		licht.tekenLicht();
 		for (Knop k : knoppen) {
-			k.tekenKnop();
+			k.teken();
 		}
 	}
 	
