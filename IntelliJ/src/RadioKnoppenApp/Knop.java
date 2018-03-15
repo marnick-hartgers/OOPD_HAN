@@ -42,13 +42,15 @@ public abstract class Knop{
 
     public void handelInteractieAf() {
         if(isMuisOverKnop()) {
-            doeKnopActie();
+            doeKnopActie(false);
         }
     }
 
-    protected void doeKnopActie(){
-        for(IDoelwit d : _doelen){
-            d.schakel();
+    protected void doeKnopActie( boolean silent){
+        if(!silent){
+            for(IDoelwit d : _doelen){
+                d.schakel();
+            }
         }
     }
 

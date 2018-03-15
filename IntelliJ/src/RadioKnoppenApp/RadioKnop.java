@@ -11,6 +11,7 @@ public class RadioKnop extends Switch implements IDoelwit{
     @Override
     public void schakel() {
         super.setState(false);
+        //super.doeKnopActie(true);
     }
     @Override
     public void teken() {

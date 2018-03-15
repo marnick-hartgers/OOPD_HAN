@@ -14,12 +14,12 @@ public abstract class Switch extends Knop {
     @Override
     public final void handelInteractieAf() {
         if(isMuisOverKnop()){
-            doeKnopActie();
+            doeKnopActie(false);
         }
     }
 
-    public void doeKnopActie(){
-        super.doeKnopActie();
+    public void doeKnopActie(boolean silent){
+        super.doeKnopActie(silent);
         isAan = !isAan;
     }
 
