@@ -22,25 +22,22 @@ public abstract class CeUiComponent implements ICeUiComponent{
 
     @Override
     public void processMouseEvent(ComponentEvent event, Vec2 location) {
-        switch (event){
-            case MouseClicked:
-                checkMouseClicked(location);
-        }
+        checkMouse(event, location );
     }
 
     protected boolean isOnComponent(Vec2 pos){
         return position.isOnRect(pos);
     }
 
-    private void checkMouseClicked( Vec2 location){
+    private void checkMouse(ComponentEvent event, Vec2 location){
         if(isOnComponent(location)){
-            mouseClicked(location.substract(position.getAbsolutePosition()));
+            mouseClicked(event,location.substract(position.getAbsolutePosition()));
         }
     }
 
-    protected void mouseClicked(Vec2 localLocation){
+    protected void mouseClicked(ComponentEvent event, Vec2 localLocation){
         for (ICeMouseEventReaction reaction : _mouseEventReactions){
-            reaction.clicked(localLocation);
+            reaction.onMouseEvent(event, localLocation);
         }
     }
 

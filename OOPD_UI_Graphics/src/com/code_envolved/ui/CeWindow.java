@@ -43,6 +43,20 @@ public abstract class CeWindow extends PApplet {
         }
     }
 
+    @Override
+    public void mousePressed() {
+        for(ICeUiComponent c : _components){
+            c.processMouseEvent(ComponentEvent.MouseDown, new Vec2(mouseX, mouseY));
+        }
+    }
+
+    @Override
+    public void mouseReleased() {
+        for(ICeUiComponent c : _components){
+            c.processMouseEvent(ComponentEvent.MouseUp, new Vec2(mouseX, mouseY));
+        }
+    }
+
     public void settings(){
         size((int)_windowsSize.x(), (int)_windowsSize.y());
         loop();

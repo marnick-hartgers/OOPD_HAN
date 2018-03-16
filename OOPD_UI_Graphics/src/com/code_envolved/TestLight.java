@@ -6,6 +6,7 @@ import com.code_envolved.ui.Models.Vec2;
 import com.code_envolved.ui.component.CeUiComponent;
 import com.code_envolved.ui.component.ICeMouseEventReaction;
 import com.code_envolved.ui.component.ICeUiComponent;
+import com.code_envolved.ui.component.events.ComponentEvent;
 import processing.core.PApplet;
 
 public class TestLight extends CeUiComponent implements ICeMouseEventReaction {
@@ -27,8 +28,11 @@ public class TestLight extends CeUiComponent implements ICeMouseEventReaction {
     }
 
     @Override
-    public void clicked(Vec2 localLocation) {
-        state = state == LightState.off ? LightState.on : LightState.off;
+    public void onMouseEvent(ComponentEvent event, Vec2 localLocation) {
+        if(event == ComponentEvent.MouseClicked){
+            state = state == LightState.off ? LightState.on : LightState.off;
+        }
+
     }
 
     @Override
