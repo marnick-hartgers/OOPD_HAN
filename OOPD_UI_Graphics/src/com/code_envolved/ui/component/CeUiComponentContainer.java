@@ -28,7 +28,6 @@ public abstract class CeUiComponentContainer extends CeUiComponent {
     @Override
     public void draw(CeWindow window, Vec2 parentOffset) {
         position.setOffset(parentOffset);
-
         for(ICeUiComponent c : _childs){
             c.draw(window, position.getAbsolutePosition());
         }
